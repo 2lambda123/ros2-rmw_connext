@@ -21,20 +21,20 @@
 
 extern "C"
 {
-rmw_ret_t
-rmw_get_gid_for_publisher(const rmw_publisher_t * publisher, rmw_gid_t * gid)
-{
-  RMW_CHECK_ARGUMENT_FOR_NULL(publisher, RMW_RET_INVALID_ARGUMENT);
-  RMW_CHECK_TYPE_IDENTIFIERS_MATCH(
-    publisher,
-    publisher->implementation_identifier,
-    rti_connext_identifier,
-    return RMW_RET_INCORRECT_RMW_IMPLEMENTATION);
-  RMW_CHECK_ARGUMENT_FOR_NULL(gid, RMW_RET_INVALID_ARGUMENT);
+    rmw_ret_t
+    rmw_get_gid_for_publisher(const rmw_publisher_t * publisher, rmw_gid_t * gid)
+    {
+        RMW_CHECK_ARGUMENT_FOR_NULL(publisher, RMW_RET_INVALID_ARGUMENT);
+        RMW_CHECK_TYPE_IDENTIFIERS_MATCH(
+            publisher,
+            publisher->implementation_identifier,
+            rti_connext_identifier,
+            return RMW_RET_INCORRECT_RMW_IMPLEMENTATION);
+        RMW_CHECK_ARGUMENT_FOR_NULL(gid, RMW_RET_INVALID_ARGUMENT);
 
-  const ConnextStaticPublisherInfo * publisher_info =
-    static_cast<const ConnextStaticPublisherInfo *>(publisher->data);
-  *gid = publisher_info->publisher_gid;
-  return RMW_RET_OK;
-}
+        const ConnextStaticPublisherInfo * publisher_info =
+            static_cast<const ConnextStaticPublisherInfo *>(publisher->data);
+        *gid = publisher_info->publisher_gid;
+        return RMW_RET_OK;
+    }
 }  // extern "C"
