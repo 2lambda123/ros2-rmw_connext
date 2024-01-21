@@ -6,17 +6,17 @@ Implementation of the ROS Middleware (rmw) Interface using [RTI's Connext DDS](h
 
 To use rmw_connext with ROS2 applications, set the environment variable `RMW_IMPLEMENTATION=rmw_connext_cpp` and run your ROS2 applications as usual:
 
-**Linux:**  
-`export RMW_IMPLEMENTATION=rmw_connext_cpp`  
+**Linux:**
+`export RMW_IMPLEMENTATION=rmw_connext_cpp`
 or prepend on ROS2 command line, such as:
 `RMW_IMPLEMENTATION=rmw_connext_cpp ros2 run rviz2 rviz2`
 
-**Windows**:  
+**Windows**:
 `set RMW_IMPLEMENTATION=rmw_connext_cpp`
 
 ## Binary Installation
 
-Pre-built binaries for RTI Connext DDS are available for **x86_64 (Debian/Ubuntu) Linux** platform using the steps outlined in the [ROS2 installation wiki](https://index.ros.org/doc/ros2/Installation), available under a non-commercial license.  
+Pre-built binaries for RTI Connext DDS are available for **x86_64 (Debian/Ubuntu) Linux** platform using the steps outlined in the [ROS2 installation wiki](https://index.ros.org/doc/ros2/Installation), available under a non-commercial license.
 Other platforms must be built from source, using a separately-installed copy of RTI Connext DDS.
 
 ## How to get RTI Connext DDS
